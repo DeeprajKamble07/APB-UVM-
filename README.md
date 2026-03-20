@@ -1,1 +1,5 @@
 # APB-UVM-
+
+This project focuses on the design and verification of the **Advanced Peripheral Bus (APB)** protocol, a part of the AMBA architecture developed by Arm Holdings. The APB master and slave modules are implemented using Verilog, supporting both read and write operations. The design follows a state machine-based approach and includes key APB signals such as PADDR, PWDATA, PRDATA, PSEL, PENABLE, PWRITE, and PREADY, ensuring a simple and low-power communication interface between processor and peripherals.
+
+For verification, a complete UVM-based testbench is developed, including sequence item, sequence, driver, monitor, agent, scoreboard, and environment. The testbench performs functional verification of APB read and write transactions with a self-checking mechanism using a scoreboard to ensure data integrity. Simulations were successfully executed using tools like VCS/EDA Playground, validating correct protocol behavior without any violations, making this project suitable for SoC and embedded system applications.
