@@ -1,3 +1,17 @@
+/***************************************************************************
+* File Name : apb_protocol.sv 
+* File Description : Verification of apb protocol using UVM
+                     - apb master (apb_master)
+                     - apb slave (apb_slave)
+                     - Functional coverage
+                     - SystemVerilog Assertion
+* Creation Date : 3-12-2025
+* Last Modified : Sun 28 Dec 2025 05:55:52 PM IST
+* Author :  Deepraj G Kamble
+* Version : 1.0
+* Organization : Personal Project
+***************************************************************************/
+
 module apb_master(input pclk, prst, transfer, pwrite,
                   input [31:0] paddr, pwdata,
                   input pready, pslverr,
