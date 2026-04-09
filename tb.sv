@@ -10,8 +10,10 @@ import uvm_pkg::*;
 `include "monitor.sv"
 `include "agent.sv"
 `include "scoreboard.sv"
+`include "coverage.sv"
 `include "enivornment.sv"
 `include "test.sv"
+`include "assertion.sv"
 
 module top;
   logic pclk;
@@ -21,6 +23,8 @@ module top;
   apb_master dut1(.pclk(intff.pclk),.prst(intff.prst),.transfer(intff.transfer),.pwrite(intff.pwrite),.paddr(intff.paddr),.pwdata(intff.pwdata),.pready(intff.pready),.prdata(intff.prdata),.pslverr(intff.pslverr),.psel      (intff.psel),.penable(intff.penable),.paddr_out(intff.paddr_out),.pwrite_out(intff.pwrite_out),.pwdata_out(intff.pwdata_out),.dataout(intff.dataout),.slverr(intff.slverr),.done(intff.done));
   
   apb_slave dut2(.pclk(intff.pclk),.prst(intff.prst),.psel(intff.psel),.penable(intff.penable),.pwrite  (intff.pwrite_out),.paddr(intff.paddr_out),.pwdata(intff.pwdata_out),.prdata(intff.prdata),.pready(intff.pready),.pslverr (intff.pslverr));
+  
+  apb_assertion dut3(.pclk(intff.pclk),.prst(intff.prst),.psel(intff.psel),.penable(intff.penable),.pwrite(intff.pwrite_out),.pready(intff.pready),.pslverr(intff.pslverr),.pwdata(intff.pwdata_out),.paddr(intff.paddr_out),.prdata(intff.prdata));
   
   initial begin
     pclk=0;
